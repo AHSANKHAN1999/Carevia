@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react'; // Facebook yahan se nikal diya
 import Link from 'next/link';
 
 const Footer = () => {
@@ -14,7 +14,6 @@ const Footer = () => {
             <p className="text-white/90 text-lg">Contact us today to schedule a consultation or learn more about our specialized medical services.</p>
           </div>
           <div className="md:w-1/3 flex justify-end w-full">
-            {/* YAHAN BUTTON KI JAGAH LINK LAGA DIYA HAI */}
             <Link 
               href="/book-a-service" 
               className="bg-white text-accent hover:bg-gray-100 font-bold py-4 px-8 rounded-full flex items-center justify-center gap-2 transition-all w-full sm:w-auto shadow-lg"
@@ -40,11 +39,32 @@ const Footer = () => {
             <p className="text-gray-400">
               Providing compassionate, professional, and personalized medical care in the comfort of your own home.
             </p>
+            
+            {/* FACEBOOK SVG ICON */}
             <div className="flex gap-4 pt-2">
-              <a href="#" className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors">FB</a>
-              <a href="#" className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors">TW</a>
-              <a href="#" className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors">IG</a>
-              <a href="#" className="bg-white/10 hover:bg-accent p-2 rounded-full transition-colors">IN</a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=61567667787669" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="bg-white/10 hover:bg-[#1877F2] hover:text-white p-2.5 rounded-full transition-colors flex items-center justify-center group"
+                aria-label="Facebook"
+              >
+                {/* Asli Facebook jaisa SVG icon */}
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  className="group-hover:fill-current"
+                >
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -72,7 +92,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Column - UPDATED WITH YOUR DETAILS */}
+          {/* Contact Column */}
           <div>
             <h4 className="text-xl font-bold mb-6 border-b border-white/20 pb-4 inline-block">Contact Us</h4>
             <ul className="space-y-6">
