@@ -14,9 +14,13 @@ const Footer = () => {
             <p className="text-white/90 text-lg">Contact us today to schedule a consultation or learn more about our specialized medical services.</p>
           </div>
           <div className="md:w-1/3 flex justify-end w-full">
-            <button className="bg-white text-accent hover:bg-gray-100 font-bold py-4 px-8 rounded-full flex items-center justify-center gap-2 transition-all w-full sm:w-auto shadow-lg">
+            {/* YAHAN BUTTON KI JAGAH LINK LAGA DIYA HAI */}
+            <Link 
+              href="/book-a-service" 
+              className="bg-white text-accent hover:bg-gray-100 font-bold py-4 px-8 rounded-full flex items-center justify-center gap-2 transition-all w-full sm:w-auto shadow-lg"
+            >
               Book Appointment <ArrowRight size={20} />
-            </button>
+            </Link>
           </div>
         </div>
 
