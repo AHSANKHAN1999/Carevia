@@ -65,15 +65,10 @@ const Services = () => {
               <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-muted mb-6">
+              {/* Yahan se Read More ka link aur icon hata diya gaya hai */}
+              <p className="text-muted mb-0"> 
                 {service.description}
               </p>
-              <a href="#" className="inline-flex items-center text-primary font-semibold group-hover:text-accent transition-colors">
-                Read More 
-                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeartPulse, UserCheck, ShieldCheck, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link'; // Ye naya import add kiya hai navigation ke liye
 
 const Hero = () => {
   return (
@@ -32,13 +33,14 @@ const Hero = () => {
               Providing compassionate, professional, and personalized medical care in the comfort of your own home. Our certified nurses are dedicated to your well-being and recovery.
             </p>
             
+            {/* YAHAN BUTTONS KO LINK MEIN CHANGE KIYA GAYA HAI */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <button className="bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-all shadow-xl hover:shadow-2xl">
+              <Link href="#services" className="bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-all shadow-xl hover:shadow-2xl w-fit">
                 Our Services <ArrowRight size={18} />
-              </button>
-              <button className="bg-white border-2 border-primary text-primary hover:bg-light font-bold py-3 px-6 rounded-full transition-all">
+              </Link>
+              <Link href="#about" className="bg-white border-2 border-primary text-primary hover:bg-light font-bold py-3 px-6 rounded-full transition-all text-center w-fit">
                 Learn More
-              </button>
+              </Link>
             </div>
 
             {/* Quick stats/features - Mobile par space theek ki gai hai */}

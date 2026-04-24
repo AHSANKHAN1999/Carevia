@@ -1,21 +1,20 @@
 import React from 'react';
 import { CheckCircle2, PhoneCall } from 'lucide-react';
-import Image from 'next/image'; // 1. Ye import zaroori hai
+import Image from 'next/image';
 
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          {/* Image Side - UPDATED AREA */}
+          {/* Image Side */}
           <div className="lg:w-1/2 relative w-full">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[500px] w-full bg-gray-200">
-              {/* 2. Placeholder div ko hata kar humne Image lagayi hai */}
               <div className="relative w-full h-full">
                 <Image 
-                  src="/about-us.png" // 3. PICHLE STEP MEIN GENERATE KI GAYI IMAGE KA PATH (Zaroori: image public folder mein ho)
+                  src="/about-us.png" // Public folder mein /about-us.png honi chahiye
                   alt="Carevia Professional Home Care and Patient Support"
-                  fill // Container ko fill karne ke liye
+                  fill
                   className="object-cover"
                 />
               </div>
@@ -55,10 +54,8 @@ const About = () => {
               ))}
             </div>
 
-            <div className="pt-8 flex flex-col sm:flex-row items-center gap-6">
-              <button className="bg-primary hover:bg-primary-light text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg w-full sm:w-auto">
-                Discover More
-              </button>
+            {/* Yahan se Discover More button hata diya gaya hai */}
+            <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
               
               <div className="flex items-center gap-4">
                 <div className="bg-accent/10 p-3 rounded-full text-accent">
@@ -70,6 +67,7 @@ const About = () => {
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>
