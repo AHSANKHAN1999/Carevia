@@ -54,7 +54,7 @@ const About = () => {
               ))}
             </div>
 
-            {/* Yahan se Discover More button hata diya gaya hai */}
+            {/* Yahan number update aur clickable kar diya gaya hai */}
             <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
               
               <div className="flex items-center gap-4">
@@ -63,7 +63,9 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted">Need Help? Call Us</p>
-                  <p className="font-bold text-primary">+1 (234) 567-890</p>
+                  <a href="tel:+923022096374" className="font-bold text-primary hover:text-accent transition-colors">
+                    +92 302 2096374
+                  </a>
                 </div>
               </div>
             </div>
