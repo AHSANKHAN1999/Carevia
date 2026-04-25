@@ -53,12 +53,10 @@ const Testimonials = () => {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
         const cardWidth = scrollRef.current.children[0].clientWidth;
 
-        // Agar end par pounch gaye hain
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
           scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
           setActiveIndex(0);
         } else {
-          // Aage scroll karein
           scrollRef.current.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
           setActiveIndex((prev) => (prev + 1) % testimonials.length);
         }
@@ -77,27 +75,27 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-light relative overflow-hidden">
-      {/* Original Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-accent/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+    <section id="testimonials" className="py-20 bg-[#f8fafc] relative overflow-hidden">
+      {/* Subtle Background Elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100/50 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-50 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
-        {/* Original Section Header */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-block text-accent font-semibold tracking-wider uppercase text-sm">
+          <div className="inline-block text-blue-600 font-bold tracking-wider uppercase text-sm bg-blue-100/50 px-4 py-1 rounded-full">
             Testimonials
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1e293b]">
             What Our Patients Say
           </h2>
-          <p className="text-muted text-lg">
+          <p className="text-gray-500 text-lg">
             Read the experiences of families who have trusted Carevia with their health and well-being.
           </p>
         </div>
 
-        {/* Scrollable Container with Original Card Theme */}
+        {/* Scrollable Container */}
         <div className="relative">
           <div 
             ref={scrollRef}
@@ -111,33 +109,33 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100 relative flex flex-col justify-between"
+                className="flex-none w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 relative flex flex-col justify-between"
               >
-                {/* Original Quote Icon */}
-                <div className="absolute -top-6 left-8 bg-accent text-white p-3 rounded-full shadow-lg z-10">
-                  <Quote size={24} fill="currentColor" />
+                {/* Clean Quote Icon */}
+                <div className="absolute -top-5 left-8 bg-blue-600 text-white p-2.5 rounded-lg shadow-md z-10 rotate-3">
+                  <Quote size={20} fill="currentColor" className="-rotate-3" />
                 </div>
                 
                 <div>
                   <div className="flex gap-1 mb-6 mt-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />
+                      <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
                   
-                  <p className="text-muted mb-8 italic leading-relaxed min-h-[140px]">
+                  <p className="text-gray-600 mb-8 leading-relaxed min-h-[140px] text-sm md:text-base font-medium">
                     "{testimonial.content}"
                   </p>
                 </div>
                 
-                {/* Original Profile Info Layout */}
-                <div className="flex items-center gap-4 border-t border-gray-50 pt-4 mt-auto">
-                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-gray-500 overflow-hidden shrink-0">
+                {/* Profile Info Layout */}
+                <div className="flex items-center gap-4 border-t border-gray-100 pt-5 mt-auto">
+                  <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center font-bold text-blue-600 overflow-hidden shrink-0 text-lg border border-blue-100">
                      {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary">{testimonial.name}</h4>
-                    <p className="text-sm text-accent">{testimonial.location}</p>
+                    <h4 className="font-bold text-[#1e293b] text-sm md:text-base">{testimonial.name}</h4>
+                    <p className="text-xs md:text-sm text-blue-600 font-semibold">{testimonial.location}</p>
                   </div>
                 </div>
               </div>
@@ -145,14 +143,14 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Pagination Dots (Matching Theme Colors) */}
-        <div className="flex justify-center gap-2 mt-2">
+        {/* Pagination Dots */}
+        <div className="flex justify-center gap-2 mt-4">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => handleDotClick(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                index === activeIndex ? 'bg-accent w-6' : 'bg-accent/20 w-2 hover:bg-accent/40'
+                index === activeIndex ? 'bg-blue-600 w-8' : 'bg-blue-200 w-2 hover:bg-blue-400'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

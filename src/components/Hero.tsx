@@ -1,100 +1,98 @@
 import React from 'react';
-import { HeartPulse, UserCheck, ShieldCheck, ArrowRight } from 'lucide-react';
+import { ShieldPlus, Activity, Clock, PhoneCall, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link'; // Ye naya import add kiya hai navigation ke liye
+import Link from 'next/link';
 
 const Hero = () => {
   return (
-    // Padding bottom ko kam kiya gaya hai taake gap na bane mobile par
-    <section id="home" className="relative bg-light pt-12 pb-12 md:pt-20 md:pb-20 overflow-hidden min-h-fit">
+    <section id="home" className="relative bg-gradient-to-br from-blue-50/50 to-white pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden min-h-[85vh] flex items-center">
       
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-bl-[100px] -z-10"></div>
+      {/* Subtle Background Pattern (Portea style dot grid or soft shape) */}
+      <div className="absolute top-0 right-0 w-full md:w-2/3 h-full bg-[#f8fafc] rounded-bl-[150px] -z-10 opacity-70"></div>
       
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
-        {/* flex-col aur gap ko adjust kiya gaya hai */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
           
-          {/* Text Content */}
-          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8">
-            <div className="inline-block bg-accent/10 text-accent font-semibold px-4 py-2 rounded-full border border-accent/20">
-              <span className="flex items-center gap-2 text-sm md:text-base">
-                <HeartPulse size={16} /> 
-                Professional Health Care Services
+          {/* Left Text Content */}
+          <div className="w-full lg:w-[55%] space-y-6 md:space-y-8 z-10">
+            
+            {/* Top Badge */}
+            <div className="inline-block bg-blue-100/80 text-blue-800 font-semibold px-4 py-1.5 rounded-full border border-blue-200">
+              <span className="flex items-center gap-2 text-sm tracking-wide">
+                <ShieldPlus size={16} /> 
+                Delivering Global Standards at Home
               </span>
             </div>
             
-            {/* Text size mobile ke liye thoda chota rakha gaya hai taake fit aye */}
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-primary leading-tight">
-              Exceptional <span className="text-accent">Home Nursing</span> <br />& Medical Care
-            </h1>
+            {/* Headline & Sub-headline */}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1e293b] leading-[1.15] tracking-tight">
+                Hospital-Level <br/>
+                <span className="text-red-500">ICU & Medical Care</span> <br/>
+                at Your Doorstep
+              </h1>
+              
+              <p className="text-lg md:text-xl text-gray-600 font-medium max-w-lg leading-relaxed">
+                24/7 Emergency Response | Professional Care in Minutes
+              </p>
+            </div>
             
-            <p className="text-base md:text-lg text-muted max-w-lg">
-              Providing compassionate, professional, and personalized medical care in the comfort of your own home. Our certified nurses are dedicated to your well-being and recovery.
-            </p>
-            
-            {/* YAHAN BUTTONS KO LINK MEIN CHANGE KIYA GAYA HAI */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Link href="#services" className="bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-all shadow-xl hover:shadow-2xl w-fit">
-                Our Services <ArrowRight size={18} />
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/book-service" className="bg-[#1e293b] hover:bg-gray-800 text-white font-bold py-3.5 px-8 rounded flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+                Book a Professional Nurse <ArrowRight size={18} />
               </Link>
-              <Link href="#about" className="bg-white border-2 border-primary text-primary hover:bg-light font-bold py-3 px-6 rounded-full transition-all text-center w-fit">
-                Learn More
+              <Link href="tel:+920000000000" className="bg-red-50 hover:bg-red-100 border-2 border-red-100 text-red-600 hover:text-red-700 font-bold py-3.5 px-8 rounded flex items-center justify-center gap-2 transition-all w-full sm:w-auto">
+                <PhoneCall size={18} /> Emergency Support
               </Link>
             </div>
 
-            {/* Quick stats/features - Mobile par space theek ki gai hai */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6 border-t border-gray-200 mt-6">
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">24/7</div>
-                <div className="text-xs md:text-sm text-muted">Availability Support</div>
-              </div>
-              <div>
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">50+</div>
-                <div className="text-xs md:text-sm text-muted">Certified Experts</div>
-              </div>
-              <div className="col-span-2 md:col-span-1 md:block">
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">10k+</div>
-                <div className="text-xs md:text-sm text-muted">Happy Patients</div>
-              </div>
+            {/* Trust Indicators (Below Buttons) */}
+            <div className="flex flex-wrap items-center gap-4 md:gap-8 pt-6 border-t border-gray-100 mt-8">
+               <div className="flex items-center gap-2 text-gray-600">
+                  <Activity size={18} className="text-green-500" />
+                  <span className="text-sm font-semibold">Hospital Protocols</span>
+               </div>
+               <div className="flex items-center gap-2 text-gray-600">
+                  <ShieldPlus size={18} className="text-green-500" />
+                  <span className="text-sm font-semibold">Verified RN/BSN</span>
+               </div>
+               <div className="flex items-center gap-2 text-gray-600">
+                  <Clock size={18} className="text-green-500" />
+                  <span className="text-sm font-semibold">24/7 Monitoring</span>
+               </div>
             </div>
+
           </div>
 
-          {/* Image/Visual Content - Mobile view ko fix kiya gaya hai */}
-          <div className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 md:border-8 border-white">
-              {/* Image Container ki height mobile aur desktop dono ke liye set ki gai hai */}
-              <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
+          {/* Right Image/Visual Content */}
+          <div className="w-full lg:w-[45%] relative mt-8 lg:mt-0 flex justify-end">
+             {/* Decorative Background Element (Circle) */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-red-500/10 rounded-full blur-3xl -z-10"></div>
+            
+            <div className="relative z-10 rounded-tl-[80px] rounded-br-[80px] rounded-tr-xl rounded-bl-xl overflow-hidden shadow-2xl border-4 border-white max-w-[500px] w-full">
+              <div className="relative w-full h-[400px] sm:h-[450px] md:h-[550px] bg-gray-100">
                 <Image 
-                  src="/hero-image.png" // Yaad rahe: public folder mein is naam ki image honi chahiye, jaise humne abhi HD generate ki
-                  alt="Professional Home Nursing"
+                  src="/hero-image.png" 
+                  alt="Professional ICU and Home Nursing Care"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   priority
                 />
               </div>
             </div>
 
-            {/* Floating badges - Animations delay adjust ki gai hain */}
-            <div className="absolute -left-4 md:-left-8 top-1/4 bg-white p-3 md:p-4 rounded-xl shadow-xl z-20 hidden md:flex items-center gap-3 animate-bounce" style={{ animationDuration: '3s' }}>
-              <div className="bg-green-100 p-2 md:p-3 rounded-full text-green-600">
-                <UserCheck size={20} className="md:w-6 md:h-6" />
+            {/* Floating Info Box (Portea Style) */}
+            <div className="absolute -left-4 md:-left-12 bottom-12 bg-white p-4 md:p-5 rounded-xl shadow-2xl z-20 flex items-center gap-4 border-l-4 border-red-500">
+              <div className="bg-red-50 p-3 rounded-full text-red-500">
+                <Clock size={24} />
               </div>
               <div>
-                <p className="text-xs md:text-sm text-muted font-medium">Expert</p>
-                <p className="font-bold text-primary text-sm md:text-base">Caregivers</p>
+                <p className="font-bold text-[#1e293b] text-base md:text-lg">Fast Response</p>
+                <p className="text-xs md:text-sm text-gray-500 font-medium">Karachi & Dubai</p>
               </div>
             </div>
 
-            <div className="absolute -right-4 md:-right-8 bottom-1/4 bg-white p-3 md:p-4 rounded-xl shadow-xl z-20 hidden md:flex items-center gap-3 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
-              <div className="bg-accent/10 p-2 md:p-3 rounded-full text-accent">
-                <ShieldCheck size={20} className="md:w-6 md:h-6" />
-              </div>
-              <div>
-                <p className="text-xs md:text-sm text-muted font-medium">Certified</p>
-                <p className="font-bold text-primary text-sm md:text-base">Services</p>
-              </div>
-            </div>
           </div>
 
         </div>
