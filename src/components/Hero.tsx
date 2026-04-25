@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative bg-gradient-to-br from-blue-50/50 to-white pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden min-h-[85vh] flex items-center">
       
-      {/* Subtle Background Pattern (Portea style dot grid or soft shape) */}
+      {/* Subtle Background Pattern */}
       <div className="absolute top-0 right-0 w-full md:w-2/3 h-full bg-[#f8fafc] rounded-bl-[150px] -z-10 opacity-70"></div>
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
@@ -28,7 +28,7 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1e293b] leading-[1.15] tracking-tight">
                 Hospital-Level <br/>
-                <span className="text-red-500">ICU & Medical Care</span> <br/>
+                <span className="text-blue-600">ICU & Medical Care</span> <br/>
                 at Your Doorstep
               </h1>
               
@@ -42,7 +42,8 @@ const Hero = () => {
               <Link href="/book-service" className="bg-[#1e293b] hover:bg-gray-800 text-white font-bold py-3.5 px-8 rounded flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
                 Book a Professional Nurse <ArrowRight size={18} />
               </Link>
-              <Link href="tel:+920000000000" className="bg-red-50 hover:bg-red-100 border-2 border-red-100 text-red-600 hover:text-red-700 font-bold py-3.5 px-8 rounded flex items-center justify-center gap-2 transition-all w-full sm:w-auto">
+              {/* Emergency Support button updated to Blue Theme */}
+              <Link href="tel:+923022096374" className="bg-blue-50 hover:bg-blue-100 border-2 border-blue-100 text-blue-600 hover:text-blue-700 font-bold py-3.5 px-8 rounded flex items-center justify-center gap-2 transition-all w-full sm:w-auto">
                 <PhoneCall size={18} /> Emergency Support
               </Link>
             </div>
@@ -50,15 +51,15 @@ const Hero = () => {
             {/* Trust Indicators (Below Buttons) */}
             <div className="flex flex-wrap items-center gap-4 md:gap-8 pt-6 border-t border-gray-100 mt-8">
                <div className="flex items-center gap-2 text-gray-600">
-                  <Activity size={18} className="text-green-500" />
+                  <Activity size={18} className="text-blue-500" />
                   <span className="text-sm font-semibold">Hospital Protocols</span>
                </div>
                <div className="flex items-center gap-2 text-gray-600">
-                  <ShieldPlus size={18} className="text-green-500" />
+                  <ShieldPlus size={18} className="text-blue-500" />
                   <span className="text-sm font-semibold">Verified RN/BSN</span>
                </div>
                <div className="flex items-center gap-2 text-gray-600">
-                  <Clock size={18} className="text-green-500" />
+                  <Clock size={18} className="text-blue-500" />
                   <span className="text-sm font-semibold">24/7 Monitoring</span>
                </div>
             </div>
@@ -68,7 +69,7 @@ const Hero = () => {
           {/* Right Image/Visual Content */}
           <div className="w-full lg:w-[45%] relative mt-8 lg:mt-0 flex justify-end">
              {/* Decorative Background Element (Circle) */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-red-500/10 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
             
             <div className="relative z-10 rounded-tl-[80px] rounded-br-[80px] rounded-tr-xl rounded-bl-xl overflow-hidden shadow-2xl border-4 border-white max-w-[500px] w-full">
               <div className="relative w-full h-[400px] sm:h-[450px] md:h-[550px] bg-gray-100">
@@ -82,9 +83,9 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Floating Info Box (Portea Style) */}
-            <div className="absolute -left-4 md:-left-12 bottom-12 bg-white p-4 md:p-5 rounded-xl shadow-2xl z-20 flex items-center gap-4 border-l-4 border-red-500">
-              <div className="bg-red-50 p-3 rounded-full text-red-500">
+            {/* Floating Info Box (Portea Style - Updated to Blue Theme) */}
+            <div className="absolute -left-4 md:-left-12 bottom-12 bg-white p-4 md:p-5 rounded-xl shadow-2xl z-20 flex items-center gap-4 border-l-4 border-blue-600">
+              <div className="bg-blue-50 p-3 rounded-full text-blue-600">
                 <Clock size={24} />
               </div>
               <div>
